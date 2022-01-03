@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html, body{
+display: grid;
+height: 100%;
+place-items: center;
+text-align: center;
+background: #f2f2f2;
+}
+.container{
+    position: relative;
+    height: 500px;
+    width: 400px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.3);
+    transition: 0.3 ease-out;
+}
+.container:hover{
+    box-shadow: 0 1px 35px 0 rgba(0,0,0,0.3);  
+}
+.container .image{
+    position: absolute;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: transform 0.3s ease-out;
+}
+.container:hover .image{
+    transform: translateY(-70px);
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3 ease-out;
+}
+.container:hover .image img{
+    opacity: 0.7;
+}
+.container .content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.content .info{
+    position: absolute;
+    bottom: 5px;
+    text-align: center;
+    width: 100%;
+    line-height: 26px;
+}
+.info h1{
+    font-size: 37px;
+    margin: 3px 0;
+}
+.info span{
+  color: #1a1a1a;
+}
+.container ul{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    list-style: none;
+}
+.container ul li{
+    margin: 0 5px;
+}
+.container ul li a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: #000;
+    background: #fff;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 20px;
+   transform: translateY(200px);
+   opacity: 0;
+   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.container:hover ul >li >a{
+    transform: translateY(0);
+    opacity: 1;  
+    color: blue;
+}
+.container:hover ul >li:nth-child(2) a{
+transition-delay: 0.1s;
+color: rgb(65, 177, 241);
+}
+.container:hover ul >li:nth-child(3) a{
+    transition-delay: 0.2s;
+    color: rgb(253, 8, 102);
+    }
+    .container:hover ul >li:nth-child(4) a{
+        transition-delay: 0.3s;
+        color: rgb(1, 162, 255);
+        }
+        .container:hover ul >li:nth-child(5) a{
+            transition-delay: 0.4s;
+            color: red;
+            }
